@@ -1,27 +1,18 @@
 import "./App.css";
-import {
-   BrowserRouter as Router,
-   Switch,
-   Route,
-   Routes,
-} from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import NavigationBar from "./Components/Nav/index.js";
 import About from "./pages/about.js";
 import SubmitForm from "./pages/submit.js";
+import Home from "./pages/home.js";
 function App() {
    return (
       <div className="App">
-         <Router>
-            <NavigationBar />
-            <Routes>
-               <Route path="about" element={About} />
-               <Route path="submit" element={SubmitForm} />
-            </Routes>
-         </Router>
-
-         <header className="App-header">
-            <h1>Natural Hairstylez</h1>
-         </header>
+         <NavigationBar />
+         <Routes>
+            <Route path="about" element={<About />} />
+            <Route path="submit" element={<SubmitForm />} />
+            <Route path="home" element={<Home />} />
+         </Routes>
       </div>
    );
 }
